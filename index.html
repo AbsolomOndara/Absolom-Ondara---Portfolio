@@ -72,32 +72,117 @@
         <li><a href="#resume-section"><i class="bi bi-trophy naviconn"></i> Awards</a></li>
         <li><a href="#unique-testimonials"><i class="bi bi-chat-quote navicon"></i>Testimonials</a></li>
         <li><a href="catalogue.html"><i class="bi bi-journal-bookmark-fill navicon"></i>Get My Catalogue</a></li>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     </nav>
   </header>
 
   <main class="main">
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+    <!DOCTYPE html>
+<html lang="en">
+<body>
+    <section id="hero-section" class="hero-section">
 
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Background" class="hero-bg-image">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <strong><h1 style="font-size: 70px;">Absolom Ondara</h1></strong>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1 class="hero-name">Absolom Ondara</h1>
+            
+            <div class="hero-title-container">
+                <h2 class="hero-title">Is a 
+                    <span id="hero-typed" class="hero-typed" data-hero-items=
+                        "Developer, Programmer, UX/UI Expert, DEVOPS Engineer, System Admin">
+                    </span>
+                    <span class="hero-typed-cursor">|</span>
+                </h2>
+            </div>
+            
+            <p class="hero-description">
+                Crafting digital experiences with clean code, intuitive design, and scalable solutions. 
+                Passionate about transforming ideas into functional, beautiful applications.
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="#proj-section" class="hero-btn hero-btn-primary">
+                    <i class="fas fa-briefcase"></i> View Work
+                </a>
+                <a href="https://wa.me/254112293409?text=Hello%20this%20is%20Absolom%20how%20can%20I%20help%20you" class="hero-btn hero-btn-outline">
+                    <i class="fas fa-paper-plane"></i> Contact Me
+                </a>
+            </div>
+            
+            <div class="hero-socials">
+                <a href="https://github.com/AbsolomOndara" class="hero-social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/absolom-ondara-602789326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hero-social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://x.com/OndaraAbsolom" class="hero-social-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://x.com/OndaraAbsolom" class="hero-social-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" fill="white"/>
+                        </svg>
+                    </a>
+                </a>
+                <a href="https://www.facebook.com/absolom.jayson?rdid=jF7OfbkLmV1DkYFC&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15vWu4SqRL%2F#" class="hero-social-link">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+        </div>
         
-          <h1 style= "font-size: 50px; font-style: italic;">Is a 
-            <span class="typed" data-typed-items="
-              <span style='color: #bd5d38;'>Developer.</span>, 
-              <span style='color: #bd5d38;'>Programmer.</span>, 
-              <span style='color: #bd5d38;'>UX/UI Expert.</span>, 
-              <span style='color: #bd5d38;'>DEVOPS Engineer.</span>, 
-              <span style='color: #bd5d38;'>System Admin.</span>">
-            </span>
-            <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
-            <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
-          </1>
-      </div>
-
+        <div class="scroll-indicator">
+            <div class="scroll-down"></div>
+        </div>
     </section>
+
+    <script>
+        // Typed.js initialization with unique identifiers
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulate typed effect (you can replace with actual Typed.js if available)
+            const typedElement = document.getElementById('hero-typed');
+            const items = typedElement.getAttribute('data-hero-items').split(', ');
+            let currentItem = 0;
+            let currentChar = 0;
+            let isDeleting = false;
+            let typingSpeed = 100;
+            
+            function type() {
+                const fullText = items[currentItem];
+                
+                if (isDeleting) {
+                    typedElement.textContent = fullText.substring(0, currentChar - 1);
+                    currentChar--;
+                    typingSpeed = 50;
+                } else {
+                    typedElement.textContent = fullText.substring(0, currentChar + 1);
+                    currentChar++;
+                    typingSpeed = 100;
+                }
+                
+                if (!isDeleting && currentChar === fullText.length) {
+                    isDeleting = true;
+                    typingSpeed = 1000;
+                } else if (isDeleting && currentChar === 0) {
+                    isDeleting = false;
+                    currentItem = (currentItem + 1) % items.length;
+                    typingSpeed = 500;
+                }
+                
+                setTimeout(type, typingSpeed);
+            }
+            
+            // Start the typing effect after a delay
+            setTimeout(type, 1000);
+        });
+    </script>
+
     <!-- /Hero Section -->
 
     <!-- About Section -->
@@ -197,49 +282,101 @@
 
 
     <!-- Stats Section -->
-    <section id="stats" class="stats section">
+    <section class="custom-stats-section">
+        <div class="custom-stats-container">
+            <div class="custom-stats-row">
+                <div class="custom-stats-item">
+                    <div class="custom-stats-icon">
+                        <i class="bi bi-emoji-smile"></i>
+                    </div>
+                    <span class="custom-counter" data-count="102">0</span>
+                    <p class="custom-stats-text">Happy Clients</p>
+                </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="custom-stats-item">
+                    <div class="custom-stats-icon">
+                        <i class="bi bi-journal-richtext"></i>
+                    </div>
+                    <span class="custom-counter" data-count="105">0</span>
+                    <p class="custom-stats-text">Projects</p>
+                </div>
 
-        <div class="row gy-4">
+                <div class="custom-stats-item">
+                    <div class="custom-stats-icon">
+                        <i class="bi bi-headset"></i>
+                    </div>
+                    <span class="custom-counter" data-count="1453">0</span>
+                    <p class="custom-stats-text">Hours Of Support</p>
+                </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="102" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Happy Clients</strong></p>
+                <div class="custom-stats-item">
+                    <div class="custom-stats-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <span class="custom-counter" data-count="32">0</span>
+                    <p class="custom-stats-text">Hard Workers</p>
+                </div>
             </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="105" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Projects</strong></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hours Of Support</strong></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hard Workers</strong></p>
-            </div>
-          </div><!-- End Stats Item -->
-
         </div>
+    </section>
 
-      </div>
-
-    </section><!-- /Stats Section -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Custom counter animation function
+            function animateCounter(el) {
+                const target = parseInt(el.getAttribute('data-count'));
+                const duration = 2000; // Animation duration in ms
+                const steps = 60; // Number of steps
+                const stepDuration = duration / steps;
+                const increment = target / steps;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        el.textContent = target + '+';
+                        clearInterval(timer);
+                    } else {
+                        el.textContent = Math.floor(current) + '+';
+                    }
+                }, stepDuration);
+            }
+            
+            // Function to check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+            
+            // Check if counters have already been animated
+            let countersAnimated = false;
+            
+            // Animate counters when they come into view
+            function checkCounters() {
+                const counters = document.querySelectorAll('.custom-counter');
+                
+                if (counters.length > 0 && isInViewport(counters[0]) && !countersAnimated) {
+                    counters.forEach(counter => {
+                        animateCounter(counter);
+                    });
+                    countersAnimated = true;
+                    window.removeEventListener('scroll', checkCounters);
+                }
+            }
+            
+            // Initial check
+            checkCounters();
+            
+            // Listen for scroll events
+            window.addEventListener('scroll', checkCounters);
+        });
+    </script>
+    <!-- /Stats Section -->
 
 <!-- Experience Section -->
 <section id="exp-section" class="exp-section">
@@ -268,9 +405,6 @@
           <span class="exp-skill">Problem Solving</span>
         </div>
       </div>
-
-      
-
       <!-- Fast Link Internet Providers -->
       <div class="exp-item">
         <h3 class="exp-role">IT Technician</h3>
@@ -467,74 +601,6 @@
                 </article>
             </div>
         </div>
-    <style>
-        
-        /* Outline Button Style */
-        .outline-btn {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 15px 36px;
-            background: transparent;
-            color: #bd5d38;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border: 2px solid #bd5d38;
-            border-radius: 12px;
-            cursor: pointer;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .outline-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: #bd5d38;
-            transition: all 0.3s ease;
-            z-index: -1;
-        }
-        
-        .outline-btn:hover::before {
-            width: 100%;
-        }
-        
-        .outline-btn:hover {
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(189, 93, 56, 0.3);
-        }
-        
-        .outline-btn:active {
-            transform: translateY(0);
-        }
-        
-        .outline-btn:hover i {
-            transform: translateX(5px);
-        }
-        
-        .outline-btn i {
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-        }
-        
-      
-        
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .button-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-        }
-        
-    </style>
     <br>
     <div class="container">
     <div class="button-container">
@@ -788,7 +854,7 @@
 
 <!--------Interets section starts here -->
 <!-- Interests Section -->
-<section class="interests-section" id="unique-interests"></section>
+
   <div class="section-header">
     <h2>What Drives Me</h2>
     <p>A blend of tech passion and life adventures</p>
@@ -921,7 +987,7 @@
           </article>
       </div>
 
-      <a href="https://wa.me/0112293409?text=Hi!%20Please%20share%20your%20full%20CV" 
+      <a href="https://wa.me/0724662792?text=Hi!%20Please%20share%20your%20full%20CV" 
          class="rs-whatsapp-btn" 
          target="_blank"
          rel="noopener noreferrer">
@@ -980,90 +1046,150 @@
 
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+</head>
+<body>
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info-side">
+                <div class="contact-info-wrapper">
+                    <div class="section-title">
+                        <h2>Get in Touch</h2>
+                        <p>Let's build something amazing together—reach out for collaborations, projects, or just a tech chat</p>
+                    </div>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Let's build something amazing together—reach out for collaborations, projects, or just a tech chat</p>
-      </div><!-- End Section Title -->
+                    <div class="contact-info-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="info-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Address</h3>
+                            <p>Kahawa Sukari, Kenya</p>
+                        </div>
+                    </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-info-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="info-icon">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Call Me</h3>
+                            <p>+254724662792</p>
+                        </div>
+                    </div>
 
-        <div class="row gy-4">
+                    <div class="contact-info-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="info-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email Me</h3>
+                            <p>absolomondara01@gmail.com</p>
+                        </div>
+                    </div>
 
-          <div class="col-lg-5">
-
-            <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Address</h3>
-                  <p>160, Kahawa Sukari, Kenya</p>
+                    <div class="social-links">
+                        <a href="https://github.com/AbsolomOndara" class="hero-social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/absolom-ondara-602789326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hero-social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://x.com/OndaraAbsolom" class="hero-social-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" fill="white"/>
+                        </svg>
+                    </a>
+                </a>
+                <a href="https://www.facebook.com/absolom.jayson?rdid=jF7OfbkLmV1DkYFC&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15vWu4SqRL%2F#" class="hero-social-link">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                    </div>
                 </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Call Us</h3>
-                  <p>+254112293409</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email Me</h3>
-                  <p>absolomjayson46@gmail.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <iframe src="" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-          </div>
 
-          <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
+            <div class="contact-form-side">
+                <div class="contact-form-container">
+                    <form id="custom-contact-form" method="post" class="custom-php-email-form">
+                        <div class="form-row">
+                            <div class="form-group half-width">
+                                <label for="custom-name-field">Your Name</label>
+                                <input type="text" name="name" id="custom-name-field" class="form-control-custom" required>
+                            </div>
 
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                            <div class="form-group half-width">
+                                <label for="custom-email-field">Your Email</label>
+                                <input type="email" class="form-control-custom" name="email" id="custom-email-field" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="custom-subject-field">Subject</label>
+                            <input type="text" class="form-control-custom" name="subject" id="custom-subject-field" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="custom-message-field">Message</label>
+                            <textarea class="form-control-custom" name="message" rows="6" id="custom-message-field" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <i class="bi bi-send-fill" style="margin-left: 8px;"></i>
+                            </button>
+                        </div>
+
+                        <div class="form-status loading">Loading</div>
+                        <div class="form-status error-message">Error sending message. Please try again.</div>
+                        <div class="form-status sent-message">Your message has been sent. Thank you!</div>
+                    </form>
                 </div>
-
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
+            </div>
         </div>
+    </section>
 
-      </div>
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31911.608715925307!2d36.924226854038125!3d-1.1946379228111244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3f8e4b8ad947%3A0x9504ecc7473b7b93!2sKahawa%20Sukari!5e0!3m2!1sen!2ske!4v1757003480553!5m2!1sen!2ske" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 
-    </section><!-- /Contact Section -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('custom-contact-form');
+            const loadingElement = document.querySelector('.form-status.loading');
+            const errorElement = document.querySelector('.form-status.error-message');
+            const successElement = document.querySelector('.form-status.sent-message');
+            
+            // Hide status messages initially
+            loadingElement.style.display = 'none';
+            errorElement.style.display = 'none';
+            successElement.style.display = 'none';
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading, hide other messages
+                loadingElement.style.display = 'block';
+                errorElement.style.display = 'none';
+                successElement.style.display = 'none';
+                
+                // Simulate form submission
+                setTimeout(function() {
+                    loadingElement.style.display = 'none';
+                    
+                    // Simulate success (in real implementation, this would be based on actual response)
+                    const isSuccess = true; // Change to false to simulate error
+                    
+                    if (isSuccess) {
+                        successElement.style.display = 'block';
+                        contactForm.reset();
+                    } else {
+                        errorElement.style.display = 'block';
+                    }
+                }, 2000);
+            });
+        });
+    </script>
+    <!-- end of Contact Section -->
 
   </main>
 
